@@ -1,0 +1,2 @@
+# WinPlatform
+DealsPlatform
