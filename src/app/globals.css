@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #F9F3EA;
+    /* #E8DAC5 User Requested */
+    --foreground: 220 5% 14%;
+    /* #232426 Charcoal */
+    --primary: 0 100% 59%;
+    /* #FF2E2E Vivid Red */
+    --secondary: 345 88% 10%;
+    /* #30030E Deep Claret */
+    --card: 0 0% 100%;
+    /* #FFFFFF Pure White */
+    --card-foreground: 220 5% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 5% 14%;
+    --muted: 37 20% 75%;
+    --muted-foreground: 220 5% 40%;
+    --accent: 345 88% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 100% 59%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 53% 68%;
+    --input: 36 53% 68%;
+    --ring: 0 100% 59%;
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode - keeping minimal for now, or adapting if needed in future */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #F9F3EA;
+      --foreground: 220 5% 14%;
+      --primary: 0 100% 59%;
+      --secondary: 345 88% 10%;
+      --card: 0 0% 100%;
+      --card-foreground: 220 5% 14%;
+    }
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-cairo), Arial, Helvetica, sans-serif;
+  }
+
+  /* Leaflet Custom Overrides */
+  .leaflet-div-icon {
+    background: transparent !important;
+    border: none !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
