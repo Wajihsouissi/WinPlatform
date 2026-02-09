@@ -7,7 +7,14 @@ import { DualRangeSlider } from '@/components/ui/DualRangeSlider';
 import { cn } from '@/lib/utils';
 import { useSidebar } from './SidebarContext';
 import { useCart } from '@/context/CartContext';
-import { motion, AnimatePresence } from 'framer-motion';
+// import { motion, AnimatePresence } from 'framer-motion';
+const motion = {
+    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+    nav: ({ children, ...props }: any) => <nav {...props}>{children}</nav>,
+    button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
+    span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
+};
+const AnimatePresence = ({ children }: any) => <>{children}</>;
 
 export function TopBar() {
     const router = useRouter();
